@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Praktikum_10.Tugas">
+  <ClassDiagramComponents>
+    <Class name="Mahasiswa" package="Praktikum_10.Tugas" visibility="public" xPosition="320.0" yPosition="414.0">
+      <Fields>
+        <Field name="nim" type="String" visibility="public"/>
+        <Field name="nama_mahasiswa" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNim" returnType="String" visibility="public"/>
+        <Method name="setNim" returnType="void" visibility="public">
+          <Argument type="String" name="nim"/>
+        </Method>
+        <Method name="getNama_mahasiswa" returnType="String" visibility="public"/>
+        <Method name="setNama_mahasiswa" returnType="void" visibility="public">
+          <Argument type="String" name="nama_mahasiswa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Matakuliah" package="Praktikum_10.Tugas" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="kd_matkul" type="String" visibility="public"/>
+        <Field name="nama_matkul" type="String" visibility="public"/>
+        <Field name="kode_dosen" type="String" visibility="public"/>
+        <Field name="nama_dosen" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getKd_matkul" returnType="String" visibility="public"/>
+        <Method name="setKd_matkul" returnType="void" visibility="public">
+          <Argument type="String" name="kd_matkul"/>
+        </Method>
+        <Method name="getNama_matkul" returnType="String" visibility="public"/>
+        <Method name="setNama_matkul" returnType="void" visibility="public">
+          <Argument type="String" name="nama_matkul"/>
+        </Method>
+        <Method name="getKode_dosen" returnType="String" visibility="public"/>
+        <Method name="setKode_dosen" returnType="void" visibility="public">
+          <Argument type="String" name="kode_dosen"/>
+        </Method>
+        <Method name="getNama_dosen" returnType="String" visibility="public"/>
+        <Method name="setNama_dosen" returnType="void" visibility="public">
+          <Argument type="String" name="nama_dosen"/>
+        </Method>
+        <Method name="pilihMatkul" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NilaiMataKuliah" package="Praktikum_10.Tugas" visibility="public" xPosition="749.0" yPosition="248.0">
+      <Fields>
+        <Field name="bobot_uts" type="Double" visibility="public"/>
+        <Field name="bobot_uas" type="Double" visibility="public"/>
+        <Field name="bobot_lain2" type="Double" visibility="public"/>
+        <Field name="nilai_uts" type="Double" visibility="public"/>
+        <Field name="nilai_uas" type="Double" visibility="public"/>
+        <Field name="nilai_lain2" type="Double" visibility="public"/>
+        <Field name="nilai_akhir" type="Double" visibility="public"/>
+        <Field name="grade" type="String" visibility="public"/>
+        <Field name="mhs" type="Mahasiswa" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="hitungNilai" returnType="Double" visibility="public"/>
+        <Method name="hitungGrade" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Prodi" package="Praktikum_10.Tugas" visibility="public" xPosition="3.0" yPosition="248.0">
+      <Fields>
+        <Field name="kd_prodi" type="String" visibility="public"/>
+        <Field name="prodi" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getKd_prodi" returnType="String" visibility="public"/>
+        <Method name="setKd_prodi" returnType="void" visibility="public">
+          <Argument type="String" name="kd_prodi"/>
+        </Method>
+        <Method name="getProdi" returnType="String" visibility="public"/>
+        <Method name="setProdi" returnType="void" visibility="public">
+          <Argument type="String" name="prodi"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Praktikum_10.Tugas.Matakuliah" target="Praktikum_10.Tugas.Prodi"/>
+    <IsRelation name="is" source="Praktikum_10.Tugas.Mahasiswa" target="Praktikum_10.Tugas.Prodi"/>
+    <IsRelation name="is" source="Praktikum_10.Tugas.NilaiMataKuliah" target="Praktikum_10.Tugas.Matakuliah"/>
+    <HasRelation name="mhs" source="Praktikum_10.Tugas.NilaiMataKuliah" target="Praktikum_10.Tugas.Mahasiswa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
